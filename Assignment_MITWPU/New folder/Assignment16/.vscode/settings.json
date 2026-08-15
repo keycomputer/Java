@@ -1,0 +1,26 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "d:\\Program Files\\Apache NetBeans\\mysql-connector-j-9.7.0.jar"
+    ],
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "xprotocol",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 33060,
+            "driver": "MySQL",
+            "name": "MySql",
+            "database": "World",
+            "username": "root",
+            "password": "root",
+            "connectionTimeout": 30
+        }
+    ]
+}

@@ -13,7 +13,6 @@ class ThreadA extends Thread {
         }
     }
 }
-
 class ThreadB extends Thread {
     public void run() {
         for (int i = 20; i >= 1; i--) {
@@ -21,7 +20,6 @@ class ThreadB extends Thread {
         }
     }
 }
-
 public class Assignment7_3 {
     public static void main(String args[]) {
         ThreadA t1 = new ThreadA();
@@ -30,6 +28,6 @@ public class Assignment7_3 {
         t1.start();
         t2.start();
     }
-} {
+} 
     
-}
+

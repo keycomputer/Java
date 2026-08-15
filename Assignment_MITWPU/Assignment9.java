@@ -5,7 +5,6 @@ class AuthenticationException extends Exception {
         super(message);
     }
 }
-
 public class Assignment9 {
 
     // Method using throws

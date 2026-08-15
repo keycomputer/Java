@@ -1,10 +1,8 @@
 import java.util.function.*;
-
 @FunctionalInterface
 interface Greeting {
     void hello();
 }
-
 public class Assignment12 {
 
     public static void main(String[] args) {
