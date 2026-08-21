@@ -1,10 +1,10 @@
-package Java;
-import java.util.*;
-@FunctionalInterface
-interface function{
+painterface function{
     int arithmetic(int a, int b);
 }
+@FunctionalIntckage Java;
+import java.util.*;
 @FunctionalInterface
+erface
 interface function2{
     boolean check (int a);
 }

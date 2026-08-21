@@ -1,4 +1,4 @@
-package Java.Generic;
+// package Java.Generic;
 
 class Test <T>
 {
