@@ -1,4 +1,6 @@
-class useme
+package useful1;
+
+public class useme
 {
     void area(){
         System.out.println("To calculate area of given shape");
