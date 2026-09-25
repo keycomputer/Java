@@ -1,16 +1,16 @@
 package Java.LinkedList_DSA;
-
-class LinkedList{
-    class Node{
+class Node{
         int data;
         Node next; 
         Node (){next =null;}
         Node(int data ) { this.data = data ; next = null; } 
     }
+class LinkedList{
+    
 
-    private Node head = null;
-    private Node tail = null;
-    private int size = 0;
+    Node head = null;
+    Node tail = null;
+    int size = 0;
     LinkedList(){ this.head = this.tail = null ; this.size = 0 ;}
     void insertfirst(int elem)
     {
