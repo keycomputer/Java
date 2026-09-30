@@ -46,7 +46,72 @@ public class CircularDoublyLL {
             tail = newnode;
         }
     }
+    // int countNode(){} 
+    void insertatpos(int elem, int pos)
+    {
+        if (pos <=0 )
+            System.out.println("Invalid position ");
+        else if (pos == 1 )
+            insertBegin(elem);
+        else{
+            Node temp = head ;
+            int c = 1 ;
+            Node newnode = new Node(elem);
+            while(c < pos-1 && temp.next != head) // valid pos 
+            {
+                c++;
+                temp = temp.next;
+            }
+            if (c < pos-1 )// (temp.next == head) //
+                System.out.println("Invalid Position ");
+            else
+            {
+                newnode.next = temp.next;
+                newnode.prev = temp ;
+                temp.next.prev = newnode;
+                temp.next= newnode;
+////////////////// in between 2 and 3 insert 5 
+                // 1 2 3 4  // temp - 2, 5.next= 3 , 5.prev = 2 ,  2.next= newnode, 2.3.prev = 5 
+                //    5
+                // 1 2 3 4 -> 5 // temp 4 , 5.next = 1 , 5.prev= 4,  , 4.1.prev = 5 4.next = 5
+            }
+        }
 
+    }
+    void insertaftervalue(int elem, int value)
+    {
+        // empty list 
+        if(head == null)
+            System.out.println("Head is empty ");
+        else{
+            // find  
+            Node temp= head;
+            boolean found = false;
+            while(temp.next != head)
+            {
+                if(temp.data == value){
+                    found = true;
+                    break;
+                }
+                temp= temp.next;
+            }
+            if(temp.data == value)  
+                found = true;
+            // if found 
+            if (found)
+            {
+                Node newnode = new Node(elem);
+                newnode.next = temp.next;
+                newnode.prev = temp;
+                temp.next.prev = newnode;
+                temp.next = newnode;
+
+            }
+            // else 
+            else
+                System.out.println("Data not found ");
+        }
+    }
     void deleteBegin()
     {
         if (head == null)
@@ -90,6 +155,7 @@ public class CircularDoublyLL {
            tail.next = head ;
         }
     }
+
     void display()
     {
         Node temp = head;
@@ -112,6 +178,10 @@ public class CircularDoublyLL {
         obj.deleteBegin();
         obj.display();
         obj.deleteEnd();
+        obj.display();
+        obj.insertatpos(6, 4);
+        obj.display();
+        obj.insertaftervalue(7, 4);
         obj.display();
     }   
 }

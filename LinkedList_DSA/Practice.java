@@ -1,5 +1,7 @@
 package Java.LinkedList_DSA;
 
+import java.util.HashSet;
+
 public class Practice {
     // total node using recursion 
     static int countNode(Node head )
@@ -92,10 +94,66 @@ public class Practice {
     }    
     /// remove duplicates 
     /// Sorted 
-    
+    // 1 1 1 1 1 1
+    static Node removeduplicatesorted(Node head)
+    {
+        if(head == null){
+            System.out.println("List is empty");
+            return head;
+        }
+        else
+        {
+            Node temp= head;
+            while(temp!= null)
+            {
+                Node nexttemp = temp.next;
+                if(temp.data == nexttemp.data)
+                {
+                    while(temp.data == nexttemp.data && nexttemp != null)
+                    {
+                        temp.next = nexttemp.next; // remove 
+                        nexttemp = nexttemp.next;
+                    }
+                }
+                temp= temp.next;
+            }
+            return head;
+        }
+    }
+
     /// unsorted 
-    /// intersection point (L1 or L2 )
+    /// 1 3 1 4 2 1 5 2  
+    /// output  1 3 4 2 5 
     
+    static Node removeduplicateunsorted(Node head)
+    {
+        if(head == null)
+        {
+            System.out.println("List is empty ");
+            return head;
+        }
+        HashSet<Integer> obj = new HashSet<>();
+        Node temp = head;
+        obj.add(temp.data);  // 1 
+        while(temp != null)
+        {
+            Node nexttemp = temp.next; 
+            while(nexttemp != null && obj.contains(nexttemp.data)) // (3 in set - No )
+            {
+                // remove 
+                temp.next = nexttemp .next;  // 3-> 4
+                nexttemp = nexttemp.next;
+            }
+
+            if(nexttemp != null )
+                obj.add(temp.data);
+            temp = nexttemp;
+        }
+        return head;
+    }
+    //////////////////////////////////////////////////
+    /// intersection point (L1 or L2 )
+    //////////////////////////////////////////////////
     /// 
     /// 
     public static void main(String[] args) {
@@ -124,5 +182,15 @@ public class Practice {
         obj2.insertlast(1);
         obj2.display();
         System.out.println(isPalindrome(obj2.head));
+
+        LinkedList obj3 = new LinkedList();
+        obj3.insertlast(1);
+        obj3.insertlast(2);
+        obj3.insertlast(2   );
+        obj3.insertlast(2   );
+        obj3.display();
+        obj3.head = removeduplicatesorted(obj3.head);
+        obj3.display();
+        
     }
 }
