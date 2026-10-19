@@ -104,6 +104,31 @@ public class BST{
         return root; 
     }
     
+    int calcheight(Node root)
+    {
+        if (root == null)
+            return 0;
+        else
+            return ( Math.max( calcheight(root.left) , calcheight(root.right)) + 1 );
+    }
+
+    boolean isBST()
+    {
+        return false;
+    }
+    Node createBSTArray(int arr[], int i , int j)
+    {
+        if (i > j)
+            return null;
+        else
+        {
+            int mid = (i + j )/ 2; 
+            Node newnode = new Node(arr[mid]);
+            newnode.left = createBSTArray(arr, i, mid-1);
+            newnode.right = createBSTArray(arr, mid+1 , j );
+            return newnode;
+        }
+    }
     public static void main(String[] args) {
         BST obj = new BST();
         obj.insert(100);

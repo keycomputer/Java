@@ -1,7 +1,7 @@
 package Java.LinkedList_DSA;
 
 import java.util.HashSet;
-
+import LinkedList_DSA.*;
 public class Practice {
     // total node using recursion 
     static int countNode(Node head )
